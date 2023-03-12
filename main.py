@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-'''This is only a very simple authentication example which stores session IDs in memory and does not do any password hashing.
-Please see the `OAuth2 example at FastAPI <https://fastapi.tiangolo.com/tutorial/security/simple-oauth2/>`_  or
-use the great `Authlib package <https://docs.authlib.org/en/v0.13/client/starlette.html#using-fastapi>`_ to implement a real authentication system.
-Here we just demonstrate the NiceGUI integration.
+'''
+@author: github.com/yigitoo
+@date: 12.03.2023 10:42 PM.
 '''
 
 import uuid
@@ -152,4 +151,4 @@ def logout(request: Request) -> None:
     return RedirectResponse('/')
 
 
-ui.run(title="Blog Site")
+ui.run(title="Auth Site")
