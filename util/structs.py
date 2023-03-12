@@ -11,10 +11,3 @@ class User:
     last_active: str
     is_active: bool
     
-
-@dataclass
-class BlogPost:
-    title: str
-    content: str
-    _id: ObjectId
-    title_with_id: str
