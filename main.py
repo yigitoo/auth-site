@@ -46,10 +46,10 @@ app.add_middleware(SessionMiddleware, secret_key=SECRET_KEY)  # use your own sec
 
 @app.get("/login/google")
 async def login_via_google(request: Request):
-    redirect_uri = f'{"localhost:8080" if os.getenv("APP_MODE") == "dev" else os.getenv("PRODUCTION_LINK")}/auth'
+    redirect_uri = f'{os.getenv("PRODUCTION_LINK")}/auth/google'
     return await oauth.google.authorize_redirect(request, redirect_uri)
 
-@app.get("/auth")
+@app.get("/auth/google")
 async def auth_via_google(request: Request):
     token = await oauth.google.authorize_access_token(request)
     user = await oauth.google.parse_id_token(request, token)
